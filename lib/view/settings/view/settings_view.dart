@@ -45,14 +45,14 @@ class SettingsView extends StatelessWidget {
                       padding: PMconst.medium,
                       child: CupertinoSearchTextField(),
                     ),
-                    const SettingChatListileWidgets(
-                      user: {},
+                    SettingChatListileWidgets(
+                      user: context.watch<MainCubit>().randomuser,
                     ),
                     SizedBox(height: context.h * 0.04),
                     const SettingListtileWidget(
                         icon: CircleAvatar(
-                          backgroundColor: ColorConst.grey,
-                          radius: RadiuConst.small,
+                          backgroundImage: NetworkImage('https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80'),
+                          radius: RadiuConst.medium,
                         ),
                         text: 'Jacob design'),
                     SettingListtileWidget(

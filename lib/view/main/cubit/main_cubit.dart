@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:bloc/bloc.dart';
 import 'package:telegram/core/constants/icons/iconConst.dart';
@@ -23,19 +24,33 @@ class MainCubit extends Cubit<MainState> {
     }
   }
 
+  Map _randomuser = {};
+
+  get randomuser => _randomuser;
+
   List usersList = [];
 
-  Future getUsers()async{
-        final data = await bundle.rootBundle.loadString('lib/core/mock/users.json');
+  Future getUsers() async {
+    final data = await bundle.rootBundle.loadString('lib/core/mock/users.json');
     usersList = jsonDecode(data) as List;
     print(usersList);
+    _randomuser = usersList[Random().nextInt(usersList.length)];
     emit(ChatState());
     return usersList;
   }
-  
-  List firsthree = [IconConst.saved, IconConst.recentcalls, IconConst.stickers];
-  List secondfour = [IconConst.notifications, IconConst.privacy, IconConst.dataandstorage, IconConst.appearance];
-  List firsthreetext = ['Saved messages', 'Recent calls', 'Stickers'];
-  List secondfourtext = ['Notifications and Sounds', 'Privacy and Security', 'Data and Storage', 'Appearance'];
 
+  List firsthree = [IconConst.saved, IconConst.recentcalls, IconConst.stickers];
+  List secondfour = [
+    IconConst.notifications,
+    IconConst.privacy,
+    IconConst.dataandstorage,
+    IconConst.appearance
+  ];
+  List firsthreetext = ['Saved messages', 'Recent calls', 'Stickers'];
+  List secondfourtext = [
+    'Notifications and Sounds',
+    'Privacy and Security',
+    'Data and Storage',
+    'Appearance'
+  ];
 }

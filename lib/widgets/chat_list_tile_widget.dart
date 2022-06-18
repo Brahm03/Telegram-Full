@@ -11,11 +11,15 @@ class ChatListTileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DissmissWidget(listTile: Column(
+    return DissmissWidget(
+        listTile: Column(
       children: [
         ListTile(
-          onTap: (){},
-          onLongPress: (){},
+          dense: true,
+          onTap: () {},
+          onLongPress: () {
+           
+          },
           leading: CircleAvatar(
             radius: 30,
             backgroundImage: AssetImage(user['image_url']),
@@ -34,27 +38,28 @@ class ChatListTileWidget extends StatelessWidget {
                   user['moment'],
                   style: const TextStyle(color: Colors.grey),
                 ),
-                user['pin'] == "pinned" ? SvgPicture.asset('assets/icons/pin.svg') :
-                Container(
-                    alignment: Alignment.center,
-                    width: context.w * 0.1,
-                    height: context.h * 0.03,
-                    decoration: BoxOnlyDecoration.decor(Colors.grey.shade400,
-                        topLeft: 10.0,
-                        topRight: 10.0,
-                        bottomLeft: 10.0,
-                        bottomRight: 10.0),
-                    child:
-                     Text(
-                      user['pin'],
-                      style: TextStyle(color: Colors.white),
-                      overflow: TextOverflow.clip,
-                    ))
+                user['pin'] == "pinned"
+                    ? SvgPicture.asset('assets/icons/pin.svg')
+                    : Container(
+                        alignment: Alignment.center,
+                        width: context.w * 0.1,
+                        height: context.h * 0.03,
+                        decoration: BoxOnlyDecoration.decor(
+                            Colors.grey.shade400,
+                            topLeft: 10.0,
+                            topRight: 10.0,
+                            bottomLeft: 10.0,
+                            bottomRight: 10.0),
+                        child: Text(
+                          user['pin'],
+                          style: TextStyle(color: Colors.white),
+                          overflow: TextOverflow.clip,
+                        )),
               ],
             ),
           ),
         ),
-        Divider(thickness: 1)
+        Divider(thickness: 1),
       ],
     ));
   }
