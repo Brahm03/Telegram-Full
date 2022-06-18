@@ -5,7 +5,7 @@ import 'package:telegram/core/constants/font/fontSize.dart';
 class FontStyles {
   static const TextStyle headline1s = TextStyle(fontSize: FontSize.extraLarge);
   static const TextStyle headline2s = TextStyle(fontSize: FontSize.large);
-  static const TextStyle headline3s = TextStyle(fontSize: FontSize.large);
+  static const TextStyle headline3s = TextStyle(fontSize: FontSize.medium + 10);
   static const TextStyle headline4s = TextStyle(fontSize: FontSize.medium);
   static const TextStyle headline4sbold = TextStyle(fontSize: FontSize.medium, fontWeight: FontWeight.bold);
   static const TextStyle headline4sblue = TextStyle(fontSize: FontSize.medium, color: ColorConst.kPrimaryColor);

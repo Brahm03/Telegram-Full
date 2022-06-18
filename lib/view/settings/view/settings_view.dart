@@ -1,16 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:telegram/core/constants/color/color.dart';
 import 'package:telegram/core/constants/font/styles.dart';
 import 'package:telegram/core/constants/icons/iconConst.dart';
 import 'package:telegram/core/constants/pm/PMconst.dart';
 import 'package:telegram/core/constants/radius/radiusconst.dart';
 import 'package:telegram/extension/size_extension.dart';
+import 'package:telegram/view/main/cubit/main_cubit.dart';
 import 'package:telegram/view/settings/widget/settigsListtilewidget.dart';
 import 'package:telegram/widgets/appbar.dart';
-import 'package:telegram/widgets/chatListtilewidget.dart';
+import 'package:telegram/widgets/serttingsListTile.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({Key? key}) : super(key: key);
@@ -45,12 +45,52 @@ class SettingsView extends StatelessWidget {
                       padding: PMconst.medium,
                       child: CupertinoSearchTextField(),
                     ),
-                    const ChatListTileWidget(),
+                    const SettingChatListileWidgets(
+                      user: {},
+                    ),
                     SizedBox(height: context.h * 0.04),
-                    SettingListtileWidget(icon: IconConst.notifications, text: 'Notification settings'),
-                    SettingListtileWidget(icon: IconConst.notifications, text: 'Notification settings'),
-                    
-
+                    const SettingListtileWidget(
+                        icon: CircleAvatar(
+                          backgroundColor: ColorConst.grey,
+                          radius: RadiuConst.small,
+                        ),
+                        text: 'Jacob design'),
+                    SettingListtileWidget(
+                        icon: IconConst.plus, text: 'Add account'),
+                    SizedBox(
+                      height: context.h * 0.05,
+                    ),
+                    SizedBox(
+                      height: context.h * 0.2,
+                      child: ListView.builder(
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount:
+                              context.watch<MainCubit>().firsthree.length,
+                          itemBuilder: (__, _) {
+                            return SettingListtileWidget(
+                                icon: context.watch<MainCubit>().firsthree[_],
+                                text: context
+                                    .watch<MainCubit>()
+                                    .firsthreetext[_]);
+                          }),
+                    ),
+                    SizedBox(
+                      height: context.h * 0.05,
+                    ),
+                    SizedBox(
+                      height: context.h * 0.25,
+                      child: ListView.builder(
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount:
+                              context.watch<MainCubit>().secondfour.length,
+                          itemBuilder: (__, _) {
+                            return SettingListtileWidget(
+                                icon: context.watch<MainCubit>().secondfour[_],
+                                text: context
+                                    .watch<MainCubit>()
+                                    .secondfourtext[_]);
+                          }),
+                    )
                   ],
                 ),
               ),

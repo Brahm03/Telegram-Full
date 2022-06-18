@@ -1,6 +1,5 @@
 import 'package:chat_bubbles/bubbles/bubble_special_three.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_chat_ui/flutter_chat_ui.dart';
 import 'package:telegram/core/constants/color/color.dart';
 import 'package:telegram/core/constants/radius/radiusconst.dart';
 import 'package:telegram/extension/size_extension.dart';
@@ -8,8 +7,8 @@ import 'package:telegram/widgets/appbar.dart';
 import 'package:telegram/widgets/backButton.dart';
 import 'package:telegram/widgets/chattextfield.dart';
 
-class ChatView extends StatelessWidget {
-  const ChatView({Key? key}) : super(key: key);
+class ChatTypingView extends StatelessWidget {
+  const ChatTypingView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -13,4 +13,8 @@ class IconConst {
   static SvgPicture recentcalls = SvgPicture.asset('assets/icons/recentcalls.svg');
   static SvgPicture stickers = SvgPicture.asset('assets/icons/stickers.svg');
   static SvgPicture notifications = SvgPicture.asset('assets/icons/notification.svg');
+  static SvgPicture plus = SvgPicture.asset('assets/icons/plus.svg');
+  static SvgPicture privacy = SvgPicture.asset('assets/icons/privacy.svg');
+  static SvgPicture dataandstorage = SvgPicture.asset('assets/icons/data.svg');
+  static SvgPicture appearance = SvgPicture.asset('assets/icons/appearance.svg');
 }

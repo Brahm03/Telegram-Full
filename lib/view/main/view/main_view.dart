@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:telegram/view/chat/view/chat_view.dart';
+import 'package:telegram/view/chat/view/main_chat.dart';
 import 'package:telegram/view/main/cubit/main_cubit.dart';
 import 'package:telegram/view/main/state/main_state.dart';
 import 'package:telegram/view/settings/view/settings_view.dart';
@@ -11,7 +11,13 @@ class MainView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(create: (_) => MainCubit(), child: scofold(context));
+    return BlocProvider(
+        create: (_) {
+          var data = MainCubit();
+          data.getUsers();
+          return data;
+        },
+        child: scofold(context));
   }
 
   Scaffold scofold(BuildContext context) {

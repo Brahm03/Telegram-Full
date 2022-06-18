@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:telegram/core/constants/color/color.dart';
@@ -10,9 +11,8 @@ class BottomNavigationwidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
+    return CupertinoTabBar(
         currentIndex: context.watch<MainCubit>().currentpage,
-        type: BottomNavigationBarType.fixed,
         onTap: (v) => context.read<MainCubit>().changePages(v),
         items: [
           BottomNavigationBarItem(icon: IconConst.contanct, label: 'Contact'),
