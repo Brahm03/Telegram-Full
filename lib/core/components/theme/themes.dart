@@ -7,15 +7,16 @@ class Allthemes {
   Allthemes.init();
 
   get light => ThemeData(
-    colorScheme: ColorScheme.light(
-      primary: ColorConst.instance.kPrimaryColor,
+    scaffoldBackgroundColor: ColorConst.white,
+    colorScheme: const ColorScheme.light(
+      primary: ColorConst.kPrimaryColor,
       brightness: Brightness.light
     )
   );
 
   get dark => ThemeData(
-    colorScheme: ColorScheme.dark(
-      primary: ColorConst.instance.kPrimaryColor,
+    colorScheme: const ColorScheme.dark(
+      primary: ColorConst.kPrimaryColor,
       brightness: Brightness.dark
     )
   );
