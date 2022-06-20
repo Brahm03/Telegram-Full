@@ -18,10 +18,11 @@ class BottomNavigationwidget extends StatelessWidget {
           BottomNavigationBarItem(icon: IconConst.contanct, label: 'Contact'),
           BottomNavigationBarItem(icon: IconConst.call, label: 'Call'),
           BottomNavigationBarItem(icon: IconConst.chat, label: 'Chats'),
-          const BottomNavigationBarItem(
+          BottomNavigationBarItem(
               icon: CircleAvatar(
                 radius: RadiuConst.medium,
-                backgroundColor: ColorConst.green,
+                backgroundColor: ColorConst.kPrimaryColor,
+                backgroundImage: AssetImage(context.watch<MainCubit>().randomuser['image_url']),
               ),
               label: 'Settings'),
         ]);

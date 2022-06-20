@@ -37,7 +37,7 @@ class SettingsView extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: context.h * 0.75,
+              height: context.h * 0.77,
               child: SingleChildScrollView(
                 child: Column(
                   children: [

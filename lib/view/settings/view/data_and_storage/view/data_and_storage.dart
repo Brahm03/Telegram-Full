@@ -102,7 +102,7 @@ class DataAndStorage extends StatelessWidget {
                     ListTileWidget(
                       text: "Use Less Data",
                       trailing: SizedBox(
-                        width: context.w * 0.07,
+                        width: context.w * 78 / 375,
                         height: context.w * 4,
                         child: Row(
                           children: [

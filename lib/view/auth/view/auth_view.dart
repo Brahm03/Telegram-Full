@@ -34,6 +34,7 @@ class _AuthViewState extends State<AuthView> {
           child: Column(
             children: [
               AppBarWidget(
+                color: ColorConst.kAuthBackground,
                 leading: TextButton(
                   onPressed: () {},
                   child: const Text("Cancel"),
@@ -45,7 +46,7 @@ class _AuthViewState extends State<AuthView> {
               ),
               const Text(
                 "Your Phone",
-                style: FontStyles.headline4s,
+                style: FontStyles.headline3s,
               ),
               SizedBox(
                 height: context.h * 0.04,
@@ -60,24 +61,22 @@ class _AuthViewState extends State<AuthView> {
               Form(
                 key: formKey,
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       InternationalPhoneNumberInput(
                         hintText: "Your phone number",
                         onInputChanged: (PhoneNumber number) {
-                          print(number.phoneNumber);
                         },
                         onInputValidated: (bool value) {
-                          print(value);
                         },
                         selectorConfig: const SelectorConfig(
                             selectorType: PhoneInputSelectorType.BOTTOM_SHEET),
                         ignoreBlank: false,
                         autoValidateMode: AutovalidateMode.disabled,
                         selectorTextStyle:
-                            TextStyle(color: ColorConst.kBackgroundDark),
+                            const TextStyle(color: ColorConst.kBackgroundDark),
                         initialValue: number,
                         textFieldController: phoneController,
                         formatInput: false,
@@ -85,12 +84,10 @@ class _AuthViewState extends State<AuthView> {
                             signed: true, decimal: true),
                         inputBorder: const OutlineInputBorder(),
                         onSaved: (PhoneNumber number) {
-                          print("On Saved: $number");
-                          debugPrint("$initialCountry");
                         },
                       ),
-                      SwitchListTile(
-                        title: Text("Sync Contacts",style: FontStyles.headline4s,),
+                      SwitchListTile.adaptive(
+                        title: const Text("Sync Contacts",style: FontStyles.headline4s,),
                           value: _syncContact,
                           onChanged: (bool value) {
                             setState(() {

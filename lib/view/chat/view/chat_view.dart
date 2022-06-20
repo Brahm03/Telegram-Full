@@ -1,6 +1,7 @@
 import 'package:chat_bubbles/bubbles/bubble_special_three.dart';
 import 'package:flutter/material.dart';
 import 'package:telegram/core/constants/color/color.dart';
+import 'package:telegram/core/constants/font/styles.dart';
 import 'package:telegram/core/constants/radius/radiusconst.dart';
 import 'package:telegram/core/init/navigator/navigation.dart';
 import 'package:telegram/extension/size_extension.dart';
@@ -27,11 +28,11 @@ class ChatTypingView extends StatelessWidget {
                   radius: RadiuConst.medium,
                 ),
                 center: SizedBox(
-                    width: context.w * 0.3,
+                    width: context.w * 0.4,
                     height: context.h * 0.1,
                     child:  ListTile(
                       title: Text(data[1]['name']),
-                      subtitle: Text(data[1]['status']),
+                      subtitle: SizedBox(width: context.w * 0.4, child: Text(data[1]['status'], style: FontStyles.headline6s,),),
                     )),
                 leading: BackButtonWidgets(ontap: () => NavigationService.instance.pop(''))),
             Container(

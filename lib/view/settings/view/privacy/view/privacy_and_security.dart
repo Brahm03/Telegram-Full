@@ -25,13 +25,14 @@ class PrivacyAndSecurity extends StatelessWidget {
         child: Column(
           children: [
             AppBarWidget(
+              color: ColorConst.kAppBar,
               leading: TextButton(
                 onPressed: () => NavigationService.instance.pop(''),
                 child: const Text("Back"),
               ),
               center:
-                  Text("Privacy and Security", style: FontStyles.headline4s),
-              trailing: SizedBox(width: context.w * 0.02),
+                  const Text("Privacy and Security", style: FontStyles.headline4s),
+              trailing: SizedBox(width: context.w * 0.1),
             ),
             Expanded(
                 child: SingleChildScrollView(
@@ -43,15 +44,15 @@ class PrivacyAndSecurity extends StatelessWidget {
                     leading: IconConst.blockedUser,
                     text: "Blocked Users",
                     trailing: SizedBox(
-                      width: context.w * 0.04,
-                      height: context.h * 0.02,
+                      width: context.w * 40 / 375,
+                      height: context.h * 0.1,
                       child: Row(
-                        children: [
+                        children: const[
                           Text(
                             "9",
                             style: FontStyles.headline4sgrey,
                           ),
-                          const Icon(Icons.chevron_right_outlined),
+                           Icon(Icons.chevron_right_outlined),
                         ],
                       ),
                     ),
@@ -61,7 +62,7 @@ class PrivacyAndSecurity extends StatelessWidget {
                     leading: IconConst.activeSessions,
                     text: "Active Sessions",
                     trailing: SizedBox(
-                      width: context.w * 0.02,
+                      width: context.w * 40 / 375,
                       height: context.h * 0.04,
                       child: Row(
                         children: [
@@ -79,7 +80,7 @@ class PrivacyAndSecurity extends StatelessWidget {
                     leading: IconConst.passcodeAndFaceID,
                     text: "Passcode & Face ID",
                     trailing: SizedBox(
-                      width: context.w * 0.03,
+                      width: context.w * 57 / 375,
                       height: context.h * 0.03,
                       child: Row(
                         children: [
@@ -97,7 +98,7 @@ class PrivacyAndSecurity extends StatelessWidget {
                     leading: IconConst.twostepVerification,
                     text: "Two-Step Verification",
                     trailing: SizedBox(
-                      width: context.w * 0.03,
+                      width: context.w * 53 / 375,
                       height: context.h * 0.04,
                       child: Row(
                         children: [
@@ -121,7 +122,7 @@ class PrivacyAndSecurity extends StatelessWidget {
                   ListTileWidget(
                     text: "Phone Number",
                     trailing: SizedBox(
-                      width: context.w * 0.03,
+                      width: context.w * 139 / 375,
                       height: context.h * 0.02,
                       child: Row(
                         children: [
@@ -138,7 +139,7 @@ class PrivacyAndSecurity extends StatelessWidget {
                   ListTileWidget(
                     text: "Last Seen & Online",
                     trailing: SizedBox(
-                      width: context.w * 0.01,
+                      width: context.w * 148 / 375,
                       height: context.h * 0.04,
                       child: Row(
                         children: [
@@ -155,7 +156,7 @@ class PrivacyAndSecurity extends StatelessWidget {
                   ListTileWidget(
                     text: "Profile Photo",
                     trailing: SizedBox(
-                      width: context.w * 0.01,
+                      width: context.w * 121 / 375,
                       height: context.h * 0.03,
                       child: Row(
                         children: [
@@ -172,7 +173,7 @@ class PrivacyAndSecurity extends StatelessWidget {
                   ListTileWidget(
                     text: "Voice Calls",
                     trailing: SizedBox(
-                      width: context.w * 0.02,
+                      width: context.w * 139 / 375,
                       height: context.h * 0.2,
                       child: Row(
                         children: [
@@ -189,7 +190,7 @@ class PrivacyAndSecurity extends StatelessWidget {
                   ListTileWidget(
                     text: "Forwarded Messages",
                     trailing: SizedBox(
-                      width: context.w * 0.2,
+                      width: context.w * 121 / 375,
                       height: context.h * 0.3,
                       child: Row(
                         children: [
@@ -206,7 +207,7 @@ class PrivacyAndSecurity extends StatelessWidget {
                   ListTileWidget(
                     text: "Groups & Channels",
                     trailing: SizedBox(
-                      width: context.w * 0.01,
+                      width: context.w * 121 / 375,
                       height: context.h * 0.3,
                       child: Row(
                         children: [
@@ -235,13 +236,14 @@ class PrivacyAndSecurity extends StatelessWidget {
                   ListTileWidget(
                     text: "If Away For",
                     trailing: SizedBox(
-                      width: context.w * 0.01,
+                      width: context.w * 101 / 375,
                       height: context.h * 0.05,
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
                             "6 month",
-                            style: FontStyles.headline4sgrey,
+                            style: FontStyles.headline5sgrey,
                           ),
                           const Icon(Icons.chevron_right_outlined),
                         ],

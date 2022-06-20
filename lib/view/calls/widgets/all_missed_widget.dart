@@ -23,7 +23,7 @@ class AllMissedWidget extends StatelessWidget {
                 bottomRight: 10.0),
             child: const Text(
               "Missed",
-              style: FontStyles.headline3s,
+              style: FontStyles.headline4s,
             )),
         Positioned(
           top: context.h * 0.005,
@@ -39,7 +39,7 @@ class AllMissedWidget extends StatelessWidget {
                 bottomRight: 10.0),
             child: const Text(
               "All",
-              style: FontStyles.headline3s,
+              style: FontStyles.headline4s,
             ),
           ),
         )

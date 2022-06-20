@@ -12,6 +12,7 @@ class FontStyles {
   static const TextStyle headline4sblue = TextStyle(fontSize: FontSize.medium, color: ColorConst.kPrimaryColor);
   static const TextStyle headline4sgrey = TextStyle(fontSize: FontSize.medium, color: ColorConst.grey);
   static const TextStyle headline5s = TextStyle(fontSize: FontSize.medium);
+  static const TextStyle headline5sgrey = TextStyle(fontSize: FontSize.small, color: ColorConst.grey);
   static const TextStyle headline6s = TextStyle(fontSize: FontSize.small);
   static const TextStyle headline7s = TextStyle(fontSize: FontSize.extraSmall);
 }
