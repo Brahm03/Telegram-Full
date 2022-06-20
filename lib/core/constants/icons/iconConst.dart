@@ -17,4 +17,8 @@ class IconConst {
   static SvgPicture privacy = SvgPicture.asset('assets/icons/privacy.svg');
   static SvgPicture dataandstorage = SvgPicture.asset('assets/icons/data.svg');
   static SvgPicture appearance = SvgPicture.asset('assets/icons/appearance.svg');
+  static SvgPicture blockedUser = SvgPicture.asset('assets/icons/block.svg');
+  static SvgPicture activeSessions = SvgPicture.asset('assets/icons/active.svg');
+  static SvgPicture passcodeAndFaceID = SvgPicture.asset('assets/icons/face.svg');
+  static SvgPicture twostepVerification = SvgPicture.asset('assets/icons/key.svg');
 }

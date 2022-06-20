@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:telegram/core/components/styles/boxOnlyDecoration.dart';
 import 'package:telegram/core/constants/font/styles.dart';
+import 'package:telegram/core/init/navigator/navigation.dart';
 import 'package:telegram/extension/size_extension.dart';
 import 'package:telegram/widgets/dismiss_widget.dart';
 
@@ -16,7 +17,7 @@ class ChatListTileWidget extends StatelessWidget {
       children: [
         ListTile(
           dense: true,
-          onTap: () {},
+          onTap: () => NavigationService.instance.pushNamed(routeName: '/chat', args: [context, user]),
           onLongPress: () {
            
           },
