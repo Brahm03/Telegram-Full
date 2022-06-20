@@ -69,6 +69,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/userimages/
+    - assets/images/tgimages/
     - assets/icons/
     - lib/core/mock/
 

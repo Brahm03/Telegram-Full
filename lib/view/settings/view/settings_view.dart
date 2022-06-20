@@ -93,7 +93,7 @@ class SettingsView extends StatelessWidget {
                                     : _ == 1
                                         ? NavigationService.instance
                                             .pushNamed(routeName: '/privacy')
-                                        : _ == 2 ? NavigationService.instance.pushNamed(routeName: '/data_storage') : (){};
+                                        : _ == 2 ? NavigationService.instance.pushNamed(routeName: '/data_storage'): _ == 3 ? NavigationService.instance.pushNamed(routeName: '/apperance'): (){} ;
                               },
                               child: SettingListtileWidget(
                                   icon:
