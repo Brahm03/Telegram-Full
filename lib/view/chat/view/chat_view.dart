@@ -49,29 +49,29 @@ class ChatTypingView extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(children:  [
                   const BubbleSpecialThree(
-                    text: 'Hi',
+                    text: 'Salom',
                     color: ColorConst.green,
                   ),
                   const BubbleSpecialThree(
-                    text: 'Whats up',
-                    color: ColorConst.green,
-                  ),
-                  const BubbleSpecialThree(
-                    isSender: false,
-                    text: 'Hi',
-                  ),
-                  const BubbleSpecialThree(
-                    text: 'How is your mood?',
+                    text: 'Salom',
                     color: ColorConst.green,
                   ),
                   const BubbleSpecialThree(
                     isSender: false,
-                    text: 'perfect you?',
+                    text: 'Yaxshimisan',
+                  ),
+                  const BubbleSpecialThree(
+                    text: 'Ha yaxshi',
+                    color: ColorConst.green,
+                  ),
+                  const BubbleSpecialThree(
+                    isSender: false,
+                    text: 'Nima yangiliklar?',
                   ),
                   Align(
                     alignment: Alignment.centerRight,
                     child: Image.asset('assets/icons/picmessage.png'),
-                  )
+                  ),
                 ]),
               ),
             ),
