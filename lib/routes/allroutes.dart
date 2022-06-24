@@ -6,6 +6,7 @@ import 'package:telegram/view/settings/view/appearance/appearance_view.dart';
 import 'package:telegram/view/settings/view/data_and_storage/view/data_and_storage.dart';
 import 'package:telegram/view/settings/view/notification/view/notification.dart';
 import 'package:telegram/view/settings/view/privacy/view/privacy_and_security.dart';
+import 'package:telegram/view/settings/view/stikers/view/stikers_view.dart';
 
 class AllRoutes {
   static final AllRoutes _instance = AllRoutes.init();
@@ -31,6 +32,8 @@ class AllRoutes {
         return pageReturner(const DataAndStorage());
       case '/apperance':
         return pageReturner(const AppearanceView());  
+      case '/stickers':
+        return pageReturner(const StikersView());    
     }
     return null;
   }

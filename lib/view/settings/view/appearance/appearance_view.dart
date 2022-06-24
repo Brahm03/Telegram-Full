@@ -25,14 +25,12 @@ class AppearanceView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AppBarWidget(
-            leading: BackButtonWidgets(ontap: (){
-              Navigator.pop(context);
-            }),
+            leading: const BackButtonWidgets(),
             center: const Text(
               "Appearance",
               style: FontStyles.headline4s,
             ),
-            trailing: SvgPicture.asset('assets/icons/upload.svg'),
+            trailing: IconButton(onPressed: (){}, icon: SvgPicture.asset('assets/icons/upload.svg')),
           ),
           SizedBox(
             height: context.h * 0.03,

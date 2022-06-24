@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:telegram/core/constants/color/color.dart';
 import 'package:telegram/core/constants/font/styles.dart';
 import 'package:telegram/core/constants/radius/radiusconst.dart';
-import 'package:telegram/core/init/navigator/navigation.dart';
 import 'package:telegram/extension/size_extension.dart';
 import 'package:telegram/widgets/appbar.dart';
 import 'package:telegram/widgets/backButton.dart';
@@ -34,7 +33,7 @@ class ChatTypingView extends StatelessWidget {
                       title: Text(data[1]['name']),
                       subtitle: SizedBox(width: context.w * 0.4, child: Text(data[1]['status'], style: FontStyles.headline6s,),),
                     )),
-                leading: BackButtonWidgets(ontap: () => NavigationService.instance.pop(''))),
+                leading: const BackButtonWidgets()),
             Container(
               height: context.h * 0.77,
               width: context.w,

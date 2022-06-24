@@ -71,6 +71,7 @@ flutter:
     - assets/images/userimages/
     - assets/images/tgimages/
     - assets/icons/
+    - assets/stikers/
     - lib/core/mock/
 
   # An image asset can refer to one or more resolution-specific "variants", see

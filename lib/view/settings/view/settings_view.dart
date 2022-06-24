@@ -68,11 +68,17 @@ class SettingsView extends StatelessWidget {
                           itemCount:
                               context.watch<MainCubit>().firsthree.length,
                           itemBuilder: (__, _) {
-                            return SettingListtileWidget(
-                                icon: context.watch<MainCubit>().firsthree[_],
-                                text: context
-                                    .watch<MainCubit>()
-                                    .firsthreetext[_]);
+                            return InkWell(
+                              
+                              child: SettingListtileWidget(
+                                  icon: context.watch<MainCubit>().firsthree[_],
+                                  text: context
+                                      .watch<MainCubit>()
+                                      .firsthreetext[_]),
+                                      onTap: (){
+                                        _ == 2 ? NavigationService.instance.pushNamed(routeName: '/stickers') : (){} ;
+                                      },
+                            );
                           }),
                     ),
                     SizedBox(

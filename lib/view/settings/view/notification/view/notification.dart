@@ -2,18 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:telegram/core/constants/color/color.dart';
 import 'package:telegram/core/constants/font/styles.dart';
 import 'package:telegram/core/constants/pm/PMconst.dart';
-import 'package:telegram/core/init/navigator/navigation.dart';
 import 'package:telegram/extension/size_extension.dart';
 import 'package:telegram/widgets/appbar.dart';
+import 'package:telegram/widgets/backButton.dart';
 
 class NotifyView extends StatelessWidget {
-  NotifyView({Key? key}) : super(key: key);
-
-  bool _allAccounts = true;
-  bool _showNotificationsM = true;
-  bool _showNotificationsG = false;
-  bool _messagePreviewM = false;
-  bool _messagePreviewG = false;
+  const NotifyView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,61 +20,56 @@ class NotifyView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 AppBarWidget(
-                  leading: TextButton(
-                    onPressed: () => NavigationService.instance.pop(''),
-                    child: const Text("Back"),
-                  ),
-                  center: Center(
-                    child: Text("Notifications", style: FontStyles.headline4s),
-                  ),
-                  trailing: SizedBox(width: context.w * 0.06),
+                  leading: const BackButtonWidgets(),
+                  center: const Text("Notifications", style: FontStyles.headline4s),
+                  trailing: SizedBox(width: context.w * 0.15),
                 ),
-                Padding(
+                const Padding(
                   padding: PMconst.medium,
                   child:
                       Text("SHOW NOTIFICATIONS FROM", style: FontStyles.headline4sgrey),
                 ),
-                SwitchListTile(
+                SwitchListTile.adaptive(
                   tileColor: ColorConst.kAuthBackground,
-                  title: Text(
+                  title: const Text(
                     "All Accounts",
                     style: FontStyles.headline4s,
                   ),
-                  value: _allAccounts,
+                  value: false,
                   onChanged: (bool value) {},
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: context.h * 0.01, left: context.h * 0.01, bottom: context.h * 0.01),
-                  child: Text(
+                  child: const Text(
                       "Turn this off if you want to receive notifications only from your active account.",
                       style: FontStyles.headline4s),
                 ),
-                Padding(
+                const Padding(
                   padding: PMconst.medium,
                   child:
                       Text("MESSAGE NOTIFICATIONS", style: FontStyles.headline4sgrey),
                 ),
-                SwitchListTile(
+                SwitchListTile.adaptive(
                   tileColor: ColorConst.kAuthBackground,
-                  title: Text(
+                  title: const Text(
                     "Show Notifications",
                     style: FontStyles.headline4s,
                   ),
-                  value: _showNotificationsM,
+                  value: true,
                   onChanged: (bool value) {},
                 ),
                 divider(),
-                SwitchListTile(
+                SwitchListTile.adaptive(
                   tileColor: ColorConst.kAuthBackground,
-                  title: Text(
+                  title: const Text(
                     "Message Preview",
                     style: FontStyles.headline4s,
                   ),
-                  value: _messagePreviewM,
+                  value: true,
                   onChanged: (bool value) {},
                 ),
                 divider(),
-                ListTile(
+                const ListTile(
                   tileColor: ColorConst.kAuthBackground,
                   title: Text(
                     "Sound",
@@ -89,7 +78,7 @@ class NotifyView extends StatelessWidget {
                   trailing: Text("None", style: FontStyles.headline4sgrey),
                 ),
                 divider(),
-                ListTile(
+                const ListTile(
                   tileColor: ColorConst.kAuthBackground,
                   title: Text(
                     "Exceptions",
@@ -98,37 +87,37 @@ class NotifyView extends StatelessWidget {
                   trailing: Text("66 chats", style: FontStyles.headline4sgrey),
                 ),
                 divider(),
-                Padding(
+                const Padding(
                   padding: PMconst.medium,
                   child: Text("Set custom notifications for specific users.",
                       style: FontStyles.headline4sgrey),
                 ),
-                Padding(
+                const Padding(
                   padding: PMconst.medium,
                   child:
                       Text("GROUP NOTIFICATIONS", style: FontStyles.headline4sgrey),
                 ),
-                SwitchListTile(
+                SwitchListTile.adaptive(
                   tileColor: ColorConst.kAuthBackground,
-                  title: Text(
+                  title: const Text(
                     "Show Notifications",
                     style: FontStyles.headline4sgrey,
                   ),
-                  value: _showNotificationsG,
+                  value: true,
                   onChanged: (bool value) {},
                 ),
                 divider(),
-                SwitchListTile(
+                SwitchListTile.adaptive(
                   tileColor: ColorConst.kAuthBackground,
-                  title: Text(
+                  title: const Text(
                     "Message Preview",
                     style: FontStyles.headline4sgrey,
                   ),
-                  value: _messagePreviewG,
+                  value: false,
                   onChanged: (bool value) {},
                 ),
                 divider(),
-                ListTile(
+                const ListTile(
                   tileColor: ColorConst.kAuthBackground,
                   title: Text(
                     "Sound",
@@ -137,7 +126,7 @@ class NotifyView extends StatelessWidget {
                   trailing: Text("None", style: FontStyles.headline4sgrey),
                 ),
                 divider(),
-                ListTile(
+                const ListTile(
                   tileColor: ColorConst.kAuthBackground,
                   title: Text(
                     "Exceptions",
@@ -146,12 +135,12 @@ class NotifyView extends StatelessWidget {
                   trailing: Text("Add", style: FontStyles.headline4sgrey),
                 ),
                 divider(),
-                Padding(
+                const Padding(
                   padding: PMconst.medium,
                   child: Text("Set custom notifications for specific groups.",
                       style: FontStyles.headline4sgrey),
                 ),
-                Padding(
+                const Padding(
                   padding: PMconst.medium,
                   child:
                       Text("CHANNEL NOTIFICATIONS", style: FontStyles.headline4sgrey),

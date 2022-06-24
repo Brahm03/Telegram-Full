@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:telegram/core/constants/color/color.dart';
 import 'package:telegram/core/constants/font/styles.dart';
+import 'package:telegram/core/constants/icons/iconConst.dart';
 import 'package:telegram/core/constants/pm/PMconst.dart';
-import 'package:telegram/core/init/navigator/navigation.dart';
 import 'package:telegram/extension/size_extension.dart';
 import 'package:telegram/view/main/cubit/main_cubit.dart';
 import 'package:telegram/widgets/appbar.dart';
+import 'package:telegram/widgets/backButton.dart';
+import 'package:telegram/widgets/dividerWidget.dart';
 import 'package:telegram/widgets/listTile_widget.dart';
 
 class DataAndStorage extends StatelessWidget {
@@ -25,12 +27,10 @@ class DataAndStorage extends StatelessWidget {
         child: Column(
           children: [
             AppBarWidget(
-              leading: TextButton(
-                onPressed: () => NavigationService.instance.pop(''),
-                child: const Text("Back"),
-              ),
+
+              leading: const BackButtonWidgets(),
               center: const Text("Data and Storage", style: FontStyles.headline4s),
-              trailing: SizedBox(width: context.w * 0.07),
+              trailing: SizedBox(width: context.w * 0.15),
             ),
             Expanded(
               child: SingleChildScrollView(
@@ -44,41 +44,41 @@ class DataAndStorage extends StatelessWidget {
                       text: "Storage Usage",
                       trailing: Icon(Icons.chevron_right_outlined),
                     ),
-                    divider(),
+                   const DividerWidgets(),
                     const ListTileWidget(
                       text: "Network Usage",
                       trailing: Icon(Icons.chevron_right_outlined),
                     ),
-                    divider(),
-                    Padding(
+                    const DividerWidgets(),
+                    const Padding(
                         padding: PMconst.medium,
                         child: Text("AUTOMATIC MEDIA DOWNLOAD")),
-                    ListTileWidget(
+                     const ListTileWidget(
                       text: "Using Cellular",
                       subtitle: Text(
                         "Disabled",
                         style: FontStyles.headline4sgrey,
                       ),
-                      trailing: const Icon(Icons.chevron_right_outlined),
+                      trailing: Icon(Icons.chevron_right_outlined),
                     ),
-                    divider(),
+                    const DividerWidgets(),
                     ListTileWidget(
                       text: "Using Wi-Fi",
-                      subtitle: Text(
+                      subtitle: const Text(
                         "Disabled",
                         style: FontStyles.headline4sgrey,
                       ),
-                      trailing: const Icon(Icons.chevron_right_outlined),
+                      trailing: Icon(IconConst.chevron),
                     ),
-                    divider(),
-                    ListTile(
+                    const DividerWidgets(),
+                    const ListTile(
                       tileColor: ColorConst.kAuthBackground,
                       title: Text(
                         "Reset Auto-Download Settings",
                         style: FontStyles.headline4sgrey,
                       ),
                     ),
-                    Padding(
+                    const Padding(
                       padding: PMconst.medium,
                       child: Text("AUTO-PLAY MEDIA"),
                     ),
@@ -89,13 +89,13 @@ class DataAndStorage extends StatelessWidget {
                         onChanged: (bool value) {},
                       ),
                     ),
-                    divider(),
+                    const DividerWidgets(),
                     ListTileWidget(
                       text: "Videos",
                       trailing: Switch.adaptive(
                           value: false, onChanged: (bool value) {}),
                     ),
-                    Padding(
+                    const Padding(
                       padding: PMconst.medium,
                       child: Text("VOICE CALLS"),
                     ),
@@ -105,14 +105,14 @@ class DataAndStorage extends StatelessWidget {
                         width: context.w * 78 / 375,
                         height: context.w * 4,
                         child: Row(
-                          children: [
-                            Text("Never", style: FontStyles.headline4sgrey),
-                            const Icon(Icons.chevron_right_outlined)
+                          children:  [
+                            const Text("Never", style: FontStyles.headline4sgrey),
+                            Icon(IconConst.chevron)
                           ],
                         ),
                       ),
                     ),
-                    Padding(
+                    const Padding(
                       padding: PMconst.medium,
                       child: Text(
                         'OTHER',
@@ -138,12 +138,5 @@ class DataAndStorage extends StatelessWidget {
     );
   }
 
-  Divider divider() {
-    return const Divider(
-      height: 1,
-      color: ColorConst.kDivider,
-      thickness: 1,
-      indent: 16,
-    );
-  }
+ 
 }

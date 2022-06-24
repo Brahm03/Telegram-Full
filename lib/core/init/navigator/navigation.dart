@@ -18,7 +18,7 @@ class NavigationService {
     return navigatorKey.currentState!.pushReplacementNamed(routeName, arguments: args);
   }
 
-  void pop(String routeName) {
+  void pop() {
     return navigatorKey.currentState!.pop();
   }
 }

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:telegram/core/constants/color/color.dart';
 import 'package:telegram/core/constants/font/styles.dart';
 import 'package:telegram/core/constants/icons/iconConst.dart';
 import 'package:telegram/core/constants/pm/PMconst.dart';
-import 'package:telegram/core/init/navigator/navigation.dart';
 import 'package:telegram/extension/size_extension.dart';
-import 'package:telegram/view/main/cubit/main_cubit.dart';
 import 'package:telegram/widgets/appbar.dart';
+import 'package:telegram/widgets/backButton.dart';
+import 'package:telegram/widgets/dividerWidget.dart';
 import 'package:telegram/widgets/listTile_widget.dart';
 
 class PrivacyAndSecurity extends StatelessWidget {
@@ -26,13 +25,10 @@ class PrivacyAndSecurity extends StatelessWidget {
           children: [
             AppBarWidget(
               color: ColorConst.kAppBar,
-              leading: TextButton(
-                onPressed: () => NavigationService.instance.pop(''),
-                child: const Text("Back"),
-              ),
-              center:
-                  const Text("Privacy and Security", style: FontStyles.headline4s),
-              trailing: SizedBox(width: context.w * 0.1),
+              leading: const BackButtonWidgets(),
+              center: const Text("Privacy and Security",
+                  style: FontStyles.headline4s),
+              trailing: SizedBox(width: context.w * 0.15),
             ),
             Expanded(
                 child: SingleChildScrollView(
@@ -47,17 +43,17 @@ class PrivacyAndSecurity extends StatelessWidget {
                       width: context.w * 40 / 375,
                       height: context.h * 0.1,
                       child: Row(
-                        children: const[
-                          Text(
+                        children: [
+                          const Text(
                             "9",
                             style: FontStyles.headline4sgrey,
                           ),
-                           Icon(Icons.chevron_right_outlined),
+                          Icon(IconConst.chevron),
                         ],
                       ),
                     ),
                   ),
-                  divider(),
+                  const DividerWidgets(),
                   ListTileWidget(
                     leading: IconConst.activeSessions,
                     text: "Active Sessions",
@@ -66,16 +62,16 @@ class PrivacyAndSecurity extends StatelessWidget {
                       height: context.h * 0.04,
                       child: Row(
                         children: [
-                          Text(
+                          const Text(
                             "2",
                             style: FontStyles.headline4sgrey,
                           ),
-                          const Icon(Icons.chevron_right_outlined),
+                          Icon(IconConst.chevron),
                         ],
                       ),
                     ),
                   ),
-                  divider(),
+                  const DividerWidgets(),
                   ListTileWidget(
                     leading: IconConst.passcodeAndFaceID,
                     text: "Passcode & Face ID",
@@ -84,16 +80,16 @@ class PrivacyAndSecurity extends StatelessWidget {
                       height: context.h * 0.03,
                       child: Row(
                         children: [
-                          Text(
+                          const Text(
                             "Off",
                             style: FontStyles.headline4sgrey,
                           ),
-                          const Icon(Icons.chevron_right_outlined),
+                          Icon(IconConst.chevron),
                         ],
                       ),
                     ),
                   ),
-                  divider(),
+                  const DividerWidgets(),
                   ListTileWidget(
                     leading: IconConst.twostepVerification,
                     text: "Two-Step Verification",
@@ -102,17 +98,17 @@ class PrivacyAndSecurity extends StatelessWidget {
                       height: context.h * 0.04,
                       child: Row(
                         children: [
-                          Text(
+                          const Text(
                             "On",
                             style: FontStyles.headline4sgrey,
                           ),
-                          const Icon(Icons.chevron_right_outlined),
+                          Icon(IconConst.chevron),
                         ],
                       ),
                     ),
                   ),
-                  divider(),
-                  Padding(
+                  const DividerWidgets(),
+                  const Padding(
                     padding: PMconst.medium,
                     child: Text(
                       'PRIVACY',
@@ -126,16 +122,16 @@ class PrivacyAndSecurity extends StatelessWidget {
                       height: context.h * 0.02,
                       child: Row(
                         children: [
-                          Text(
+                          const Text(
                             "My Contacts",
                             style: FontStyles.headline4sgrey,
                           ),
-                          const Icon(Icons.chevron_right_outlined),
+                          Icon(IconConst.chevron),
                         ],
                       ),
                     ),
                   ),
-                  divider(),
+                  const DividerWidgets(),
                   ListTileWidget(
                     text: "Last Seen & Online",
                     trailing: SizedBox(
@@ -143,16 +139,16 @@ class PrivacyAndSecurity extends StatelessWidget {
                       height: context.h * 0.04,
                       child: Row(
                         children: [
-                          Text(
+                          const Text(
                             "Nobody (+14)",
                             style: FontStyles.headline4sgrey,
                           ),
-                          const Icon(Icons.chevron_right_outlined),
+                          Icon(IconConst.chevron),
                         ],
                       ),
                     ),
                   ),
-                  divider(),
+                  const DividerWidgets(),
                   ListTileWidget(
                     text: "Profile Photo",
                     trailing: SizedBox(
@@ -160,16 +156,16 @@ class PrivacyAndSecurity extends StatelessWidget {
                       height: context.h * 0.03,
                       child: Row(
                         children: [
-                          Text(
+                          const Text(
                             "Everybody",
                             style: FontStyles.headline4sgrey,
                           ),
-                          const Icon(Icons.chevron_right_outlined),
+                          Icon(IconConst.chevron),
                         ],
                       ),
                     ),
                   ),
-                  divider(),
+                  const DividerWidgets(),
                   ListTileWidget(
                     text: "Voice Calls",
                     trailing: SizedBox(
@@ -177,16 +173,16 @@ class PrivacyAndSecurity extends StatelessWidget {
                       height: context.h * 0.2,
                       child: Row(
                         children: [
-                          Text(
+                          const Text(
                             "Nobody (+7)",
                             style: FontStyles.headline4sgrey,
                           ),
-                          const Icon(Icons.chevron_right_outlined),
+                          Icon(IconConst.chevron),
                         ],
                       ),
                     ),
                   ),
-                  divider(),
+                  const DividerWidgets(),
                   ListTileWidget(
                     text: "Forwarded Messages",
                     trailing: SizedBox(
@@ -194,16 +190,16 @@ class PrivacyAndSecurity extends StatelessWidget {
                       height: context.h * 0.3,
                       child: Row(
                         children: [
-                          Text(
+                          const Text(
                             "Everybody",
                             style: FontStyles.headline4sgrey,
                           ),
-                          const Icon(Icons.chevron_right_outlined),
+                          Icon(IconConst.chevron),
                         ],
                       ),
                     ),
                   ),
-                  divider(),
+                  const DividerWidgets(),
                   ListTileWidget(
                     text: "Groups & Channels",
                     trailing: SizedBox(
@@ -211,23 +207,23 @@ class PrivacyAndSecurity extends StatelessWidget {
                       height: context.h * 0.3,
                       child: Row(
                         children: [
-                          Text(
+                          const Text(
                             "Everybody",
                             style: FontStyles.headline4sgrey,
                           ),
-                          const Icon(Icons.chevron_right_outlined),
+                          Icon(IconConst.chevron),
                         ],
                       ),
                     ),
                   ),
-                  divider(),
-                  Padding(
+                  const DividerWidgets(),
+                  const Padding(
                       padding: PMconst.medium,
                       child: Text(
                         "Change who can add you to groups and channels.",
                         style: FontStyles.headline4sgrey,
                       )),
-                  Padding(
+                  const Padding(
                       padding: PMconst.medium,
                       child: Text(
                         "AUTOMATICALLY DELETE MY ACCOUNT",
@@ -241,16 +237,16 @@ class PrivacyAndSecurity extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
+                          const Text(
                             "6 month",
                             style: FontStyles.headline5sgrey,
                           ),
-                          const Icon(Icons.chevron_right_outlined),
+                          Icon(IconConst.chevron),
                         ],
                       ),
                     ),
                   ),
-                  Padding(
+                  const Padding(
                       padding: PMconst.medium,
                       child: Text(
                         "",
@@ -262,15 +258,6 @@ class PrivacyAndSecurity extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-
-  Divider divider() {
-    return const Divider(
-      height: 1,
-      color: ColorConst.kDivider,
-      thickness: 1,
-      indent: 70,
     );
   }
 }
